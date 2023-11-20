@@ -1,0 +1,71 @@
+		
+		
+//		//Produto produto1 = new Produto("Chocolate", 10.00, 60);
+//
+//		ProdutoDAO produtoDAO = new ProdutoDAO();
+//		
+//        Produto produto1 = new Produto("Chocolate", 10.00, 60);
+//
+//        try {
+//             produtoDAO.inserir(produto1);
+//             System.out.println("Produto inserido com Sucesso!");
+//
+//            List<Produto> produtos = produtoDAO.consultar();
+//            for (Produto produto : produtos) {
+//                System.out.println(produto);
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            System.out.println("Erro ao consultar/inserir produtos no banco de dados. Erro: " + e);
+//        }
+//		
+//		// update
+//		try {
+//			Produto produtoAtualizado = new Produto("Chocolate", 15, 20);
+//			produtoAtualizado.setId(1);
+//			
+//			produtoDAO.update(produtoAtualizado);
+//		
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			System.out.println("Erro ao consultar produtos no banco de dados.");
+//		} 
+//		
+//		// select de tudo.
+//		try {
+//			List<Produto> produtos = produtoDAO.consultar();
+//			for(Produto produto : produtos) {
+//				System.out.println(produto);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			System.out.println("Erro ao consultar produtos no banco de dados.");
+//		}
+//		
+//		//select por id
+//		try {
+//			int idProduto = 1;
+//			Produto produto = produtoDAO.consultarPorId(idProduto);
+//			
+//			if(produto != null) {
+//				System.out.println("Produto consultado: ");
+//				System.out.println(produto);
+//			} else {
+//				System.out.println("Produto não encontrado.");
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			System.out.println("Erro ao realizar a consulta por ID. Erro: " + e);
+//		}
+//		
+//		//excluir produto
+//		try {
+//			int idProduto = 1;
+//			produtoDAO.excluir(idProduto);
+//			
+//			System.out.println("Produto com id: " + idProduto + " excluído com sucesso.");
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			System.out.println("Erro ao excluir produto. Erro: " + e);
+//		}
