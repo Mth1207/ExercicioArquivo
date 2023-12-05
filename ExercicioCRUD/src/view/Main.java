@@ -90,12 +90,57 @@ public class Main {
 					}
 					break;
 					
-				case 4:					
-					System.out.println("case 4");
+				case 4:
+				    System.out.println("Digite o ID do produto a ser consultado: ");
+				    int idConsulta = scanner.nextInt();
+				    
+				    try {
+				        Produto produtoConsultado = produtoDAO.consultarPorId(idConsulta);
+				        
+				        if (produtoConsultado != null) {
+				            System.out.println("Produto consultado: ");
+				            System.out.println(produtoConsultado);
+				        } else {
+				            System.out.println("Produto não encontrado.");
+				        }
+				    } catch (SQLException e) {
+				        e.printStackTrace();
+				        System.out.println("Erro ao realizar a consulta por ID. Erro: " + e);
+				    }
+				    break;
 					
 				case 5:
-					System.out.println("case 5");
-					break;
+				    System.out.println("Digite o ID do produto a ser atualizado: ");
+				    int idAtualizacao = scanner.nextInt();
+				    
+				    try {
+				        Produto produtoAtualizar = produtoDAO.consultarPorId(idAtualizacao);
+				        
+				        if (produtoAtualizar != null) {
+				            System.out.println("Digite o novo nome do produto: ");
+				            String novoNome = scanner.next();
+				            
+				            System.out.println("Digite o novo valor do produto: ");
+				            double novoValor = scanner.nextDouble();
+				            
+				            System.out.println("Digite a nova quantidade: ");
+				            int novaQuantidade = scanner.nextInt();
+				            
+				            produtoAtualizar.setDescricao(novoNome);
+				            produtoAtualizar.setPreco(novoValor);
+				            produtoAtualizar.setEstoque(novaQuantidade);
+				            
+				            produtoDAO.update(produtoAtualizar);
+				            
+				            System.out.println("Produto atualizado com sucesso.");
+				        } else {
+				            System.out.println("Produto não encontrado.");
+				        }
+				    } catch (SQLException e) {
+				        e.printStackTrace();
+				        System.out.println("Erro ao atualizar o produto. Erro: " + e);
+				    }
+				    break;
 					
 				case 6:
 					System.out.println("Encerrando programa.");
